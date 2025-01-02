@@ -33,6 +33,15 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- disable indenting on { } in html
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'html',
+  callback = function()
+    vim.opt_local.indentkeys:remove '{'
+    vim.opt_local.indentkeys:remove '}'
+  end,
+})
+
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 

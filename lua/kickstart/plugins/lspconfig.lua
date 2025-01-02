@@ -105,6 +105,10 @@ return {
           -- or a suggestion from your LSP for this to activate.
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
 
+          map('<space>e', function()
+            vim.diagnostic.open_float { scope = 'line', bufnr = 0 }
+          end, '[E]rror Float')
+
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -179,6 +183,8 @@ return {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
+        --
+        emmet_language_server = {},
 
         lua_ls = {
           -- cmd = {...},

@@ -16,6 +16,7 @@ require 'open_files_at_current_file_location'
 require 'fast_config_editing'
 require 'terminal_helpers'
 require 'go_back_to_where_you_left_off'
+require 'cpp'
 
 -- [[ openmath ]]
 require 'openmath'
